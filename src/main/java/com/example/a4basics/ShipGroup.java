@@ -1,8 +1,5 @@
 package com.example.a4basics;
 
-import javafx.scene.Group;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ShipGroup implements Groupable {
@@ -106,9 +103,7 @@ public class ShipGroup implements Groupable {
     @Override
     public Groupable duplicate() {
         ShipGroup copy = new ShipGroup();
-        children.forEach(child -> {
-            copy.addChild(child.duplicate());
-        });
+        children.forEach(child -> copy.addChild(child.duplicate()));
         return copy;
     }
 
@@ -119,7 +114,7 @@ public class ShipGroup implements Groupable {
 
     @Override
     public void setOrigin(){
-        children.forEach(child -> child.setOrigin());
+        children.forEach(Groupable::setOrigin);
         centreX = (getRight() + getLeft())/2;
         centreY = (getBottom() + getTop())/2;
     }

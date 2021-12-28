@@ -1,6 +1,5 @@
 package com.example.a4basics;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -24,7 +23,7 @@ public class ShipModel {
         ShipGroup group = new ShipGroup();
         for (Groupable element : list){
             group.addChild(element);
-            if ( !this.elements.remove(element)) System.out.println("element in a given group list, is not in model's list");;
+            if ( !this.elements.remove(element)) System.out.println("element in a given group list, is not in model's list");
         }
         this.elements.add(group);
         return group;
@@ -67,6 +66,6 @@ public class ShipModel {
     }
 
     private void notifySubscribers() {
-        subscribers.forEach(sub -> sub.modelChanged());
+        subscribers.forEach(ShipModelSubscriber::modelChanged);
     }
 }

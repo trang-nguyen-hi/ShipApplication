@@ -31,8 +31,7 @@ public class InteractionModel {
     }
 
     public ArrayList<Groupable> pasting (){
-        ArrayList<Groupable> copy = clipboard.paste();
-        return copy;
+        return clipboard.paste();
     }
 
     public XRectangle getRubberBand(){
@@ -87,10 +86,10 @@ public class InteractionModel {
     }
 
     private void notifySubscribers() {
-        subscribers.forEach(sub -> sub.modelChanged());
+        subscribers.forEach(ShipModelSubscriber::modelChanged);
     }
 
     public void notifySlider(){
-        subscribers.forEach(sub -> sub.resetSlider());
+        subscribers.forEach(ShipModelSubscriber::resetSlider);
     }
 }

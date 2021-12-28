@@ -41,9 +41,7 @@ public class ShipView extends StackPane implements ShipModelSubscriber {
     }
 
     public void setController(ShipController controller) {
-        slider.valueProperty().addListener((ov, old_val, new_val) -> {
-            controller.handleSlider((double) new_val);
-        });
+        slider.valueProperty().addListener((ov, old_val, new_val) -> controller.handleSlider((double) new_val));
         myCanvas.setOnMousePressed(e -> controller.handlePressed(e.getX(),e.getY(), e));
         myCanvas.setOnMouseDragged(e -> controller.handleDragged(e.getX(),e.getY(), e));
         myCanvas.setOnMouseReleased(e -> controller.handleReleased(e.getX(),e.getY(), e));
@@ -76,7 +74,7 @@ public class ShipView extends StackPane implements ShipModelSubscriber {
         gc.clearRect(0, 0, myCanvas.getWidth(), myCanvas.getHeight());
         model.elements.forEach(element -> {
             switch (element){
-                case Ship ship -> {this.drawShip(ship,iModel.getSelected().contains(ship));}
+                case Ship ship -> this.drawShip(ship,iModel.getSelected().contains(ship));
                 case ShipGroup group -> {
                     this.drawGroup(group, iModel.getSelected().contains(group));
                     if (iModel.getSelected().contains(group)) gc.setStroke(Color.YELLOW);
@@ -84,9 +82,7 @@ public class ShipView extends StackPane implements ShipModelSubscriber {
                     gc.strokeRect(group.getLeft(), group.getTop(), group.getRight()- group.getLeft(), group.getBottom()- group.getTop());
                     gc.strokeOval(group.centreX - 5, group.centreY - 5, 10, 10);
                 }
-                case Groupable groupable -> {
-                    System.out.println("Error: object is neither ship nor shipgroup");
-                }
+                case Groupable ignored -> System.out.println("Error: object is neither ship nor shipgroup");
             }
         });
         if (iModel.isRubberband()){

@@ -1,6 +1,5 @@
 package com.example.a4basics;
 
-import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.PixelReader;

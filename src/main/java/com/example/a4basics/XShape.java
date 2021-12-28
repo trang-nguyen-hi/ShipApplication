@@ -32,15 +32,6 @@ public abstract class XShape {
 
     public abstract boolean contains(double x, double y);
 
-    public void move(double dX, double dY) {
-        left += dX;
-        right += dX;
-        startX += dX;
-        top += dY;
-        bottom += dY;
-        startY += dY;
-    }
-
     public void setShow(boolean isShown) {
         show = isShown;
     }
@@ -49,8 +40,4 @@ public abstract class XShape {
         return show;
     }
 
-    public void resetStartCoords() {
-        startX = left;
-        startY = top;
-    }
 }
