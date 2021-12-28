@@ -13,7 +13,7 @@ Ship Application is a graphical editor in JavaFX that lets user create, position
   * Grouping: If the selection set has more than 1 ship, pressing the G key would put all the selected ships into one group. Ship group has a bounding box.
   * Ungrouping: pressing the U key would ungroup the selected group
 * Cut/Copy/Paste: use Ctrl-X/Ctrl-C/Ctrl-V for cutting/copying/pasting ships/ship groups.
-* Rotation: use the slider on the top of the canvas to rotate the selection set.
+* Rotation: use the slider at the top of the canvas to rotate the selection set.
 ## Technologies
 * Intelliji
 * Java
