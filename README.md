@@ -1,5 +1,8 @@
 ## Overview
 Ship Application is a graphical editor in JavaFX that lets user create, position, group, rotate and cut/copy/paste the spaceships. This requires the application of selection,  multiple selection, rotation, grouping, group transformation and clipboarding, learnt in CMPT 381 (Implementation of Graphical User Interfaces).
+
+![Algorithm schema](./screenshot.png)
+
 ## Functionalities
 * Creation: hold Shift and single-click 
 * Single Selection: single-click on a ship
@@ -18,4 +21,3 @@ Ship Application is a graphical editor in JavaFX that lets user create, position
 * Intelliji
 * Java
 * JavaFX
-
